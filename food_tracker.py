@@ -25,14 +25,25 @@ def main():
     """ 
     This program will receive a recipe for a meal and return the nutrient information that is relavent.
     """
+    recipes = []
     # Ask the user to choose how the recipe will be inputed
     choice = choose_input()
     # Uses the user's input to decided if to call the manual input or file input method
-    if choice == 1:
+    while choice == 1:
         query_list = manual_handler()
-    else:
+        num = input('Hit return to add another recipy. Enter 0 to exit. ')
+        if num == '0':
+            break
+        recipes.append(query_list)
+    
+    while choice == 2:
         query_list = file_handler()
-    # query_list is a list of dictionaries which holds the information
+        num = input("Hit return to add another recipe. Enter 0 to exit. ")
+        if num == '0':
+            break
+        recipes.append(query_list)
+    # recipes is a list of tuples 
+
     exit()
 
 if __name__ == "__main__":
