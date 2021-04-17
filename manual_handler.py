@@ -15,12 +15,11 @@ def ingredient_amount():
     l = numstr.split(' ')
     if len(l) != 2:
         print('Incorrect amount of arguments, try again.')
-        ingredient_amount()
-        return l
+        return ingredient_amount()
     n = 3
     n = check_unit(l)
     if n == 0:
-        ingredient_amount()
+        return ingredient_amount()
     else:
         return l
 

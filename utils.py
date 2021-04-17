@@ -14,7 +14,7 @@ def check_is_digit(string):
     except ValueError:
         # If the input isn't a string, prints error message and recursively asks the question
         print('Please input an integer')
-        check_is_digit(string)
+        return check_is_digit(string)
     # Returns the integer
     return inp
 
