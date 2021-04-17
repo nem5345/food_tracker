@@ -16,11 +16,13 @@ def ingredient_amount():
     if len(l) != 2:
         print('Incorrect amount of arguments, try again.')
         ingredient_amount()
-    n = 0
+        return l
+    n = 3
     n = check_unit(l)
     if n == 0:
         ingredient_amount()
-    return l
+    else:
+        return l
 
 def ingredient_info():
     """
