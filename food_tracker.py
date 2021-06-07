@@ -31,7 +31,7 @@ def main():
     # Uses the user's input to decided if to call the manual input or file input method
     while choice == 1:
         query_list = manual_handler()
-        num = input('Hit return to add another recipy. Enter 0 to exit. ')
+        num = input('Hit return to add another recipe. Enter 0 to exit. ')
         if num == '0':
             break
         recipes.append(query_list)
@@ -43,7 +43,7 @@ def main():
             break
         recipes.append(query_list)
     # recipes is a list of tuples 
-
+# Find a way to save the recipes in an efficient manner
     exit()
 
 if __name__ == "__main__":

@@ -86,7 +86,7 @@ def check_unit(l):
         return 0
     # Checks the unit which is the second string in the list
     # If it does not match up with the units listed here, it is not accepted
-    unit = l[1]
+    unit = l[1].lower()
     # Singular units of measure
     if unit == 'lbs' or unit == 'oz' or unit == 'cup' or unit == 'tbsp' or unit == 'tsp' or unit == 'pint' or unit == 'quart' or unit == 'gallon' or unit == 'L' or unit == 'mL' or unit == 'g' or unit == 'dash' or unit == 'pinch':
         return 1
