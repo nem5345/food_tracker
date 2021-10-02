@@ -1,3 +1,4 @@
+import json
 from utils import *
 from file_handler import *
 from manual_handler import *
@@ -42,8 +43,9 @@ def main():
         if num == '0':
             break
         recipes.append(query_list)
-    # recipes is a list of tuples 
+    # recipes is a list of tuples    
 # Find a way to save the recipes in an efficient manner
+    
     exit()
 
 if __name__ == "__main__":
