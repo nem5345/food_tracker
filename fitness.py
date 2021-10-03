@@ -3,7 +3,7 @@
 from utils import *
 
 def main():
-    BMR = BMR_calculation()
+    BMR = information_BMR()
     # BMR is multiplied by 1.2 to account for normal everyday activity BMR is if you don't move
     BMR = BMR * 1.2
     calorie_loss = weight_loss()
@@ -13,7 +13,7 @@ def main():
     print(string)
     exit()
 
-def BMR_calculation():
+def information_BMR():
     # Ask for Weight in lbs and Error check it
     string = 'Weight(lbs): '
     weight = check_is_digit(string)
@@ -23,11 +23,13 @@ def BMR_calculation():
     height = check_is_digit(string)
     # Ask for Age in years and error check it
     string = 'Age: '
-    age = check_is_digit(string)
+    age = check_is_int(string)
+    # Calculate BMR which is calories burned if you didn't move ever
     BMR_int = BMR(weight, height, age)
     return BMR_int
 
 def BMR (weight, height, age):
+    # BMR Calculation according to scientific professionals
     BMR = 66 + (6.2 * weight) + (12.7 * height) - (6.67 * age)
     return BMR
 
