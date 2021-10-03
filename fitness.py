@@ -3,16 +3,16 @@
 from utils import *
 
 def fitness():
+    # Initialize list for information ollected to go into
     info = []
     info = info_collection()
     # BMR is multiplied by 1.2 to account for normal everyday activity BMR is if you don't move
     BMR_n = 0
-    BMR_n = BMR(info[0], info[1], info[2])
-    BMR_n = BMR_n * 1.2
-    calories = BMR_n + info[4] - (info[3] * 500) 
-    string = str(calories) + ' is the amount you should eat to hit your goals'
+    BMR_n = BMR(info[0], info[1], info[2]) * 1.2
+    # The amount of calories eaten is your BMR + the calories you burn + the amount of fat you want to lose
+    calories = BMR_n + info[4] - (info[3] * 500)
+    string = str(calories) + 'cal is the amount of calories you should eat a day to hit your goals'
     print(string)
-    
 
 def info_collection():
     # Ask for Weight in lbs and Error check it
@@ -47,7 +47,8 @@ def info_collection():
     # Return all the information 
     return weight, height, age, fat_goal/weeks, calories_burn
 
-def reality_check(fat_goal, weeks):
+def reality_check(fat_goal, weeks): 
+    # Check if their goal is to lose more than 2lbs of fat a week and keep making them rethink their goals
     if (fat_goal/weeks) > 2:
         print("Your fat loss goal is unrealistic and unhealthy. On average someone can lose 1-2 lbs of body fat a week.")
         print("Please try readjusting your goals. It is ok for it to take longer than you want as long as you stay consistent.")
@@ -59,6 +60,8 @@ def BMR(weight, height, age):
     # BMR Calculation according to scientific professionals
     BMR = 66 + (6.2 * weight) + (12.7 * height) - (6.67 * age)
     return BMR
+
+
 
 def main():
     fitness()
