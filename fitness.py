@@ -1,9 +1,10 @@
 # This will be a fitness script that calculate/show how many calories you need to consume based on 
 # Don't forget to add error handling
+from utils import *
 
 def main():
-    BMR = 0
     BMR = BMR_calculation()
+    # BMR is multiplied by 1.2 to account for normal everyday activity BMR is if you don't move
     BMR = BMR * 1.2
     calorie_loss = weight_loss()
     calorie_burned = workout_calories()
@@ -23,7 +24,6 @@ def BMR_calculation():
     # Ask for Age in years and error check it
     string = 'Age: '
     age = check_is_digit(string)
-    BMR_int = 0
     BMR_int = BMR(weight, height, age)
     return BMR_int
 
@@ -46,13 +46,5 @@ def workout_calories():
     calories_run = running_workout * 125
     return calories_run + calories_strength
 
-def check_is_digit(string):
-    try:
-        inp = int(input(string))
-    except ValueError:
-        print('Please input an integer')
-        check_is_digit(string)
-    return inp
-    
-
-main()
+if __name__ == "__main__":
+    main()

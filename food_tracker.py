@@ -14,7 +14,7 @@ def choose_input():
     print('How would you like to input the recipe information?')
     string = 'Choose 1 to input ingredients one-by-one. Choose 2 to submit a recipe in a text file.\n'
     # Error checks if the input is a integer
-    choice = check_is_digit(string)
+    choice = check_is_int(string)
     # Error checks if the input is in with the bounds of the question
     if choice != 1 or choice != 2:
         print('Invalid input, please input 1 or 2')
@@ -44,7 +44,7 @@ def main():
             break
         recipes.append(query_list)
     # recipes is a list of tuples    
-# Find a way to save the recipes in an efficient manner
+#TODO Find a way to save the recipes in an efficient manner
     
     exit()
 
