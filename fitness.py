@@ -2,7 +2,7 @@
 # Don't forget to add error handling
 from utils import *
 
-def main():
+def fitness():
     info = []
     info = info_collection()
     # BMR is multiplied by 1.2 to account for normal everyday activity BMR is if you don't move
@@ -12,7 +12,7 @@ def main():
     calories = BMR_n + info[4] - (info[3] * 500) 
     string = str(calories) + ' is the amount you should eat to hit your goals'
     print(string)
-    exit()
+    
 
 def info_collection():
     # Ask for Weight in lbs and Error check it
@@ -60,6 +60,9 @@ def BMR(weight, height, age):
     BMR = 66 + (6.2 * weight) + (12.7 * height) - (6.67 * age)
     return BMR
 
+def main():
+    fitness()
+    exit()
 
 if __name__ == "__main__":
     main()
