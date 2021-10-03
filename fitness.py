@@ -13,6 +13,9 @@ def fitness():
     calories = BMR_n + info[4] - (info[3] * 500)
     string = str(calories) + 'cal is the amount of calories you should eat a day to hit your goals'
     print(string)
+    macros = []
+    string = 'These calories should be distributed over ', str(macros[0], 'grams of protein, ', str(macros[1]), 'grams of carbohydrates, and\n', str(macros[2], 'grams of fat'))
+    print(string)
 
 def info_collection():
     # Ask for Weight in lbs and Error check it
@@ -61,7 +64,11 @@ def BMR(weight, height, age):
     BMR = 66 + (6.2 * weight) + (12.7 * height) - (6.67 * age)
     return BMR
 
-
+def macro_calculations(calories):
+    protein = (calories * 0.35)/4
+    fats = (calories * 0.25)/4
+    carbs = (calories * 0.40)/9
+    return protein, fats, carbs
 
 def main():
     fitness()
