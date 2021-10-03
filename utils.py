@@ -20,6 +20,3 @@ def check_is_digit(string):
 
 def check_if_exists(name, brand):
     return True
-
-def check():
-    return True

@@ -16,9 +16,9 @@ def choose_input():
     # Error checks if the input is a integer
     choice = check_is_digit(string)
     # Error checks if the input is in with the bounds of the question
-    if choice < 1 or choice > 2:
+    if choice != 1 or choice != 2:
         print('Invalid input, please input 1 or 2')
-        return choose_input() 
+        return choose_input()
     else:
         return choice
 
