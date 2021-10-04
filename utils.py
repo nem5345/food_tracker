@@ -1,5 +1,3 @@
-
-
 def check_is_digit(string):
     """
     @param  STRING

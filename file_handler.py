@@ -1,4 +1,5 @@
 import os 
+from utils import *
 
 def file_handler():
     """
@@ -8,7 +9,7 @@ def file_handler():
     while True:
         item = file_parser(file)
         string = 'To add another ingredient, hit enter, else enter 0: '
-        answer = input(string)
+        answer = check_is_digit(string)
         # If the answer doesn't equal to 0 add the ingredient to the recipe
         if answer == '0':
             break
