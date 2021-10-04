@@ -14,7 +14,8 @@ def fitness():
     string = str(calories) + 'cal is the amount of calories you should eat a day to hit your goals'
     print(string)
     macros = []
-    string = 'These calories should be distributed over ', str(macros[0], 'grams of protein, ', str(macros[1]), 'grams of carbohydrates, and\n', str(macros[2], 'grams of fat'))
+    macros = macro_calculations()
+    # string = 'These calories should be distributed over ' + str(macros[0] + 'grams of protein, ' + str(macros[1]) + 'grams of carbohydrates, and\n' + str(macros[2] + 'grams of fat'))
     print(string)
 
 def info_collection():
@@ -31,10 +32,10 @@ def info_collection():
     i = 0
     while i == 0:
         # Ask for fat loss goal in pounds and error check it
-        string = 'How many pounds of fat would you like to lose in lbs?'
+        string = 'How many pounds of fat would you like to lose in lbs?: '
         fat_goal = check_is_digit(string)
         # Ask for time goal in weeks and error check it
-        string = 'How many weeks would you like to take on your diet?'
+        string = 'How many weeks would you like to take on your diet?: '
         weeks = check_is_int(string)
         if reality_check(fat_goal, weeks) == True:
             i == 1
